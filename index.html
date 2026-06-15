@@ -806,9 +806,36 @@
         .contact-link {
           cursor: auto !important;
         }
+        nav {
+          width: calc(100% - 32px);
+          max-width: 480px;
+          bottom: 16px;
+          padding: 6px 10px;
+          gap: 2px;
+          overflow-x: auto;
+          white-space: nowrap;
+          justify-content: flex-start;
+          -webkit-overflow-scrolling: touch;
+          border-radius: 30px;
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+        nav::-webkit-scrollbar {
+          display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+        nav a {
+          font-size: 10px;
+          padding: 6px 10px;
+        }
         #hero {
           grid-template-columns: 1fr;
           height: auto;
+        }
+        .hero-left {
+          padding: 60px 24px;
+        }
+        .hero-name {
+          font-size: 56px;
         }
         .hero-right {
           height: 50vh;
@@ -819,10 +846,15 @@
         .exp-item {
           grid-template-columns: 1fr;
           gap: 8px;
+          padding: 24px;
         }
-        .skills-layout,
+        .skills-layout {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
         .contact-layout {
           grid-template-columns: 1fr;
+          gap: 40px;
         }
         .gallery-masonry {
           columns: 2;
@@ -831,6 +863,18 @@
           grid-template-columns: 1fr 1fr;
           padding: 40px 24px;
           row-gap: 30px;
+        }
+        .stat-item {
+          border-right: none;
+          padding: 0;
+        }
+        .edu-card {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding: 24px;
+        }
+        .contact-cta {
+          padding: 30px 20px;
         }
         #skills,
         #contact {
@@ -893,7 +937,7 @@
             >✉ Get in Touch</a
           >
           <a
-            href="https://drive.google.com/file/d/19iNtGGqZFnyXZg3h2c4lt_FalmQ9B-uL/view"
+            href="https://drive.google.com/file/d/1TZik6D_qPCbur9r6uyvj5Bv3KXsGl91-/view?usp=sharing"
             target="_blank"
             class="btn-outline"
             id="download-cv"
@@ -981,7 +1025,7 @@
               data-en="Dec 2024 – Present"
               data-fr="Déc 2024 – Présent"
             >
-              Dec 2024 -> Present
+              Dec 2024 – Present
             </div>
           </div>
           <div>
@@ -1439,14 +1483,14 @@
             <span data-en="Audit Training" data-fr="Formation Audit"
               >Audit Training</span
             >
-            — IFACT
+            IFACT
           </div>
           <div class="cert-chip fade-up" style="transition-delay: 0.1s">
             <span data-en="Standard" data-fr="Norme">Standard</span>
             <span data-en="ISO Standards" data-fr="Normes ISO"
               >ISO Standards</span
             >
-            — IFACT
+            IFACT
           </div>
           <div class="cert-chip fade-up" style="transition-delay: 0.2s">
             <span data-en="Specification" data-fr="Spécification"
@@ -1469,7 +1513,7 @@
     <!-- CERTIFICATIONS -->
     <section
       id="certifications"
-      style="background: var(--light); max-width: 100%; padding: 100px 20px"
+      style="background: var(--light); max-width: 100%;"
     >
       <div style="max-width: 1080px; margin: 0 auto">
         <div
@@ -1498,7 +1542,7 @@
             <span data-en="View Certifications" data-fr="Voir les Certifications" style="font-size: 16px; font-weight: 700;"
               >View Certifications</span
             >
-            — Google Drive
+            Google Drive
           </a>
         </div>
       </div>
