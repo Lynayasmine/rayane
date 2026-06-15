@@ -70,9 +70,13 @@
         z-index: 1000;
         display: flex;
         gap: 4px;
-        background: var(--dark);
+        background: rgba(38, 41, 42, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         padding: 4px;
         border-radius: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
       .lang-btn {
         padding: 6px 14px;
@@ -99,11 +103,15 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000;
-        background: var(--dark);
+        background: rgba(38, 41, 42, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         padding: 10px 20px;
         border-radius: 50px;
         display: flex;
         gap: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       }
       nav a {
         color: rgba(255, 255, 255, 0.5);
@@ -124,7 +132,7 @@
 
       /* HERO */
       #hero {
-        min-height: 100vh;
+        height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
         position: relative;
@@ -215,10 +223,12 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        box-shadow: 0 4px 15px rgba(28, 191, 240, 0.15);
       }
       .btn-primary:hover {
         background: var(--rust);
-        transform: translateY(-2px);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(28, 191, 240, 0.3);
       }
       .btn-outline {
         background: transparent;
@@ -239,6 +249,8 @@
       .btn-outline:hover {
         border-color: white;
         background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
       }
       .hero-right {
         position: relative;
@@ -335,10 +347,10 @@
       }
       .exp-grid {
         display: grid;
-        gap: 2px;
+        gap: 16px;
       }
       .exp-item {
-        background: var(--sand);
+        background: white;
         padding: 36px 40px;
         display: grid;
         grid-template-columns: 200px 1fr;
@@ -347,6 +359,9 @@
         position: relative;
         overflow: hidden;
         cursor: none;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       .exp-item::before {
         content: "";
@@ -361,7 +376,8 @@
       .exp-item:hover {
         background: var(--dark);
         color: white;
-        transform: translateX(6px);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
       }
       .exp-item:hover::before {
         width: 4px;
@@ -478,7 +494,8 @@
       .skill-tag:hover {
         border-color: var(--terracotta);
         color: white;
-        background: rgba(233, 240, 10, 0.448);
+        background: rgba(28, 191, 240, 0.12);
+        transform: translateY(-2px);
       }
 
       /* GALLERY */
@@ -519,7 +536,7 @@
         margin-bottom: 12px;
         position: relative;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: 12px;
         cursor: none;
       }
       .gallery-item img {
@@ -564,18 +581,20 @@
       .edu-card {
         background: white;
         padding: 40px;
-        border-radius: 4px;
+        border-radius: 12px;
         display: grid;
         grid-template-columns: 120px 1fr;
         gap: 30px;
         align-items: start;
-        margin-bottom: 2px;
+        margin-bottom: 16px;
         transition: all 0.3s;
         cursor: none;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       .edu-card:hover {
-        transform: translateX(8px);
-        box-shadow: -4px 0 0 var(--terracotta);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), -4px 0 0 var(--terracotta);
       }
       .edu-year {
         font-family: "Bebas Neue", sans-serif;
@@ -610,18 +629,20 @@
       .cert-chip {
         background: white;
         padding: 20px 24px;
-        border-radius: 4px;
+        border-radius: 8px;
         font-size: 13px;
         font-weight: 600;
         color: var(--dark);
         border-left: 3px solid var(--terracotta);
         transition: all 0.3s;
         cursor: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
       }
       .cert-chip:hover {
         background: var(--dark);
         color: white;
-        transform: translateY(-3px);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
       }
       .cert-chip span {
         display: block;
@@ -702,7 +723,8 @@
       .contact-cta {
         background: var(--terracotta);
         padding: 50px;
-        border-radius: 4px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(28, 191, 240, 0.15);
       }
       .contact-cta h3 {
         font-family: "Bebas Neue", sans-serif;
@@ -768,8 +790,25 @@
       }
 
       @media (max-width: 768px) {
+        .cursor,
+        .cursor-ring {
+          display: none !important;
+        }
+        body,
+        a,
+        button,
+        .gallery-item,
+        .exp-item,
+        .filter-btn,
+        .cert-chip,
+        .edu-card,
+        .lang-btn,
+        .contact-link {
+          cursor: auto !important;
+        }
         #hero {
           grid-template-columns: 1fr;
+          height: auto;
         }
         .hero-right {
           height: 50vh;
@@ -821,6 +860,7 @@
       <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
       <a href="#gallery" data-en="Gallery" data-fr="Galerie">Gallery</a>
       <a href="#education" data-en="Education" data-fr="Formation">Education</a>
+      <a href="#certifications" data-en="Certifications" data-fr="Certifications">Certifications</a>
       <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
     </nav>
 
@@ -853,7 +893,8 @@
             >✉ Get in Touch</a
           >
           <a
-            href="https://drive.google.com/drive/u/0/home"
+            href="https://drive.google.com/file/d/19iNtGGqZFnyXZg3h2c4lt_FalmQ9B-uL/view"
+            target="_blank"
             class="btn-outline"
             id="download-cv"
             data-en="↓ Download CV"
@@ -1425,6 +1466,44 @@
       </div>
     </section>
 
+    <!-- CERTIFICATIONS -->
+    <section
+      id="certifications"
+      style="background: var(--light); max-width: 100%; padding: 100px 20px"
+    >
+      <div style="max-width: 1080px; margin: 0 auto">
+        <div
+          class="section-label"
+          data-en="My Credentials"
+          data-fr="Mes Diplômes"
+        >
+          My Credentials
+        </div>
+        <h2
+          class="section-title fade-up"
+          data-en="Certifications &<br><em>Documents</em>"
+          data-fr="Certifications &<br><em>Documents</em>"
+        >
+          Certifications &<br /><em>Documents</em>
+        </h2>
+        <div style="height: 30px"></div>
+        <div class="cert-grid">
+          <a
+            href="https://drive.google.com/drive/folders/1RaDLPMtii5upVTOkkxh41NeWzZoEGil7?usp=sharing"
+            target="_blank"
+            class="cert-chip fade-up"
+            style="display: flex; flex-direction: column; text-decoration: none; border-left: 3px solid var(--terracotta); transition: all 0.3s;"
+          >
+            <span data-en="Drive Folder" data-fr="Dossier Drive">Drive Folder</span>
+            <span data-en="View Certifications" data-fr="Voir les Certifications" style="font-size: 16px; font-weight: 700;"
+              >View Certifications</span
+            >
+            — Google Drive
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <div id="contact">
       <div style="max-width: 1080px; margin: 0 auto 50px">
@@ -1583,19 +1662,6 @@
             ring.style.height = "36px";
             ring.style.borderColor = "var(--terracotta)";
           });
-        });
-
-      // PDF download
-      const pdfB64 =
-        "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgaHR0cDovL3d3dy5yZXBvcnRsYWIuY29tCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoXChhbm9ueW1vdXNcKSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDUwNTE0NTUwOSswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDUwNTE0NTUwOSswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gd3d3LnJlcG9ydGxhYi5jb20pIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoXChhbm9ueW1vdXNcKSkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNCAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTE4NAo+PgpzdHJlYW0KR2F0bTlnTikiPSY6TzpTb1RLWTFLXW4ha20qaipaYDdlVmcsLlZIdE1PMVMpYUNAayFtIzZiXDwnRUxKZERaMUE5JUs5JU1MdClhXjc8Wk1gcmxLL1ZaKVQySj9vZU5jOmZvRCNXSC0kIz1BZFtpLlhdJCpMVzFqNGJWNSQqL3FxJTEjPjBKVGFgYjtfUmpDbiVLZzVZYW9aV2hLWC1PXE9RZkZDazBQIUA0Y0gnbkc/PWNRSCtlMCpqbzRRdV1GdFM+K0ZGRDlwQUhdRGh0WWtYQDVSbzQma25cVkIkQCEkU3NxJ2M5JT0xRTVwW2NGKlN0InQlRjMlR2UiSTZFKGQ9NjVVUUwqVEAsVWJeXWkkJGwoSFlBO0dwSnBaUjpMdUlLMUtOZDQoIlRYSl4pIzxLT15wNzspZSZUamooQjhyNlI5anIiISUsaDNHK1NcbHBbdT80Y25US2ZiKExPJEVBIk1tLlpVP2tONXFJTVwnTSxlSzowaToySj84Z1FVKHIiZU1KL10oKSk3Iks/PjFtMHFkQjlfUkVHUlBrQyhoWT1iLFxMSTRBOyQvIig9aUw7QU84QlI3Y1FbWU9fbWoyO1ZLYGhTakxGNlpZbFxNUS9bZm4zR18qUE1NRF9TRCcoWnBWRC8/dWE3dDdlcmFBLitLMkhmVFdcU1pBS1QkZiNoSVpZSmk5MjBCNkUyZWRlSypaVkxzOlpDPCIxbCMyNj5dT1NiTEhxXCs3NU9bJCpcb1ohNT9ERXQhc1AtITpcJEZaSWZRUyJnU1pjcFx1L3BfJ0U9YkF0Q0ErVjlHQV9LJCUjbVJGSUsmYyNQYlkhVmtqaCloTUhOXWgiKmY8LFpyQTlOQnEqQXFFN1JPV3QnQGBkJXRfcU8sOTluYC1eVnBSKS8mUDY/IjE7T2k3MC8jMEJGNShlQCU/ZGFTLVkjYWBlYF4rbWppJk0uPC47WXFNVzdKLipHYkVoKS1PQi5aZGNaaFBkbT1IZjoyKSsqbUUnQUF1LzU/ViYhQ01WYmFFKFYkXTNOYCFwTzphcTpxMic/I0lAIkVAOCNVbTBuUlZtJicxRCtqYzpkTWBUUF8pSSYpUVdXRzMuanRQc1ZdcDJAZGwzMC40MjdBdStfbikvcjk4SiguWiYhUFhbPFJPTThEUEVlMUhCWS1PPGJYIktzLFsjYFpGRjFWc0tiWShRNiclKFdcUUYmXGE8My4lYyZCQDooYD8uVzRnbjVPKTJFckNeLHBdU1Zrb2lAYk5vMU4mN2M/LHUhXVwza1BnME1wQyNVTm91bHNRJVZiYWpMUyc3O1A1P2pULFpqOmBFM0lFUTElXzNSUCFhMWc9PUUlXTgwUXE9WjZucTI4M0xuJiQpZlpxV1ZxaTExW0kubGFwREgtPUFuVio+JDxRLz1OOC4kWSRbQy9CKUo/LnM8Z1k3RDhpcEtJQkgxc3BIb21XNSthIWFLNS5rY0JnJCpqK1EmM2dBbi5DblgkK2YwMFZWSl1vXjJWVjJMXlNoJDg3W1QmYWdbVS45OyJxSz4vJ0dvajoyVENUIXQ9L1AjRF5VWyJUfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA5CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA3MyAwMDAwMCBuIAowMDAwMDAwMTE0IDAwMDAwIG4gCjAwMDAwMDAyMjEgMDAwMDAgbiAKMDAwMDAwMDMzMyAwMDAwMCBuIAowMDAwMDAwNTM2IDAwMDAwIG4gCjAwMDAwMDA2MDQgMDAwMDAgbiAKMDAwMDAwMDg4NyAwMDAwMCBuIAowMDAwMDAwOTQ2IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDhkNDBlZDhhZjg1NTZmNTRlNzhjNjZhN2RmYzQ2MTM4Pjw4ZDQwZWQ4YWY4NTU2ZjU0ZTc4YzY2YTdkZmM0NjEzOD5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChodHRwOi8vd3d3LnJlcG9ydGxhYi5jb20pCgovSW5mbyA2IDAgUgovUm9vdCA1IDAgUgovU2l6ZSA5Cj4+CnN0YXJ0eHJlZgoyMjIxCiUlRU9GCg==";
-      document
-        .getElementById("download-cv")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          const link = document.createElement("a");
-          link.href = "data:application/pdf;base64," + pdfB64;
-          link.download = "LARINOUNA_RAYANE_CV.pdf";
-          link.click();
         });
 
       // Language
